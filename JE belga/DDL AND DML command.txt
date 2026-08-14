@@ -1,0 +1,105 @@
+
+
+
+CREATE TABLE IF NOT EXISTS officer (
+    OfficerID INT NOT NULL PRIMARY KEY,
+    Firstname VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    gender VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS station (
+    stationID INT NOT NULL PRIMARY KEY,
+    stationname VARCHAR(50) NOT NULL,
+    district VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS assignment (
+    assignmentID INT NOT NULL PRIMARY KEY,
+    officerID VARCHAR(50) NOT NULL,
+    stationID VARCHAR(50) NOT NULL,
+    caseID VARCHAR(50) NOT NULL,
+    assignedDate VARCHAR(50) NOT NULL 
+);
+
+CREATE TABLE IF NOT EXISTS  vehicle (
+    vehicleID INT NOT NULL PRIMARY KEY,
+    platenumber VARCHAR(50) NOT NULL,
+    stationID VARCHAR(50) NOT NULL,
+    status VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS  equipment (
+    equipmentID INT NOT NULL PRIMARY KEY,
+    itemtype VARCHAR(50) NOT NULL,
+    modelandserial VARCHAR(50) NOT NULL,
+    stationID VARCHAR(50) NOT NULL,
+    status VARCHAR(50) NOT NULL
+);
+
+INSERT INTO officer (0fficerID, FirstName, LastName, gender)
+VALUES ('1', 'Mark', 'Reyes', 'Male');
+
+INSERT INTO officer (0fficerID, FirstName, LastName, gender)
+VALUES ('2', 'Liza', 'Cruz', 'Female');
+
+INSERT INTO officer (0fficerID, FirstName, LastName, gender)
+VALUES ('3', 'Kevin', 'Santos', 'Male');
+
+INSERT INTO station (StationID, StationName, District)
+VALUES ('1', 'Central Police Station', 'City Proper');
+
+INSERT INTO station (StationID, StationName, District)
+VALUES ('2', 'West Precinct', 'West District');
+
+INSERT INTO station (StationID, StationName, District)
+VALUES ('3', 'East Precinct', 'East District');
+
+INSERT INTO assignment (AssignmentID, OfficerID, StationID, CaseID, AssignedDate)
+VALUES ('1', 'O001', 'S001', 'C001', '01-10-2025');
+
+INSERT INTO assignment (AssignmentID, OfficerID, StationID, CaseID, AssignedDate)
+VALUES ('2', 'O002', 'S002', 'C002', '02-10-2025');
+
+INSERT INTO assignment (AssignmentID, OfficerID, StationID, CaseID, AssignedDate)
+VALUES ('3', 'O003', 'S003', 'C003', '03-10-2025');
+
+INSERT INTO vehicle (VehicleID, PlateNumber, StationID, Status)
+VALUES ('1', 'ABC 1234', 'S001', 'On Duty');
+
+INSERT INTO vehicle (VehicleID, PlateNumber, StationID, Status)
+VALUES ('2', 'DEF 5678', 'S002', 'Available');
+
+INSERT INTO vehicle (VehicleID, PlateNumber, StationID, Status)
+VALUES ('3', 'GHI 9012', 'S003', 'Repair');
+
+INSERT INTO equipment (equipmentID, itemType, modelandserial, StationID, Status)
+VALUES ('1', 'Handcuffs', 'HC-2024-011', 'S001', 'Good');
+
+INSERT INTO equipment (equipmentID, itemType, modelandserial, StationID, Status)
+VALUES ('2', 'Radio', 'RD-550-X', 'S002', 'Good');
+
+INSERT INTO equipment (equipmentID, itemType, modelandserial, StationID, Status)
+VALUES ('3', 'Body Camera', 'BC-Pro-7', 'S003', 'Issued');
+
+INSERT INTO equipment (equipmentID, itemType, modelandserial, StationID, Status)
+VALUES ('4', 'Pepper Spray', 'PS-MK-9', 'S004', 'New');
+
+UPDATE officer SET username = 'belga'
+WHERE 0fficerID = '1';
+
+UPDATE officer SET password = 'belga123'
+WHERE 0fficerID = '1';
+
+UPDATE officer SET username = 'alarcon'
+WHERE 0fficerID = '2';
+
+UPDATE officer SET password = 'alarcon123'
+WHERE 0fficerID = '2';
+
+UPDATE officer SET username = 'johnedrick'
+WHERE 0fficerID = '3';
+
+UPDATE officer SET password = 'johnedrick11'
+WHERE 0fficerID = '3';
+
